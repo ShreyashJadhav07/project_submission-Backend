@@ -5,6 +5,7 @@ const dotenv=require('dotenv');
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
 const AuthRouter = require("./routers/authRouter");
+const PostRouter = require("./routers/postRouter");
 
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(cors({
 
 
 app.use("/api/auth",AuthRouter);
+app.use("/api/posts",PostRouter);
 
 app.listen(3000, function(){
     console.log(`Server is running on port 3000`);
