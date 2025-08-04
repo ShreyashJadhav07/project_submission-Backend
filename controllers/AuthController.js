@@ -39,9 +39,9 @@ async function signupHandler(req,res) {
         
         res.cookie("jwt",authToken,{
             maxAge: 1000 * 60 * 60 * 24,
-            secure: false,
+            secure: true,
             httpOnly: true,
-            sameSite: 'lax'
+            sameSite: 'none'
         })
         
         res.status(201).json({
@@ -81,9 +81,9 @@ async function loginHandler(req,res) {
         
         res.cookie("jwt", authToken, {
             maxAge: 1000 * 60 * 60 * 24,
-            secure: false,
+            secure: true,
             httpOnly: true,
-            sameSite: 'lax'
+            sameSite: 'none'
         });
 
         res.status(200).json({
@@ -104,8 +104,8 @@ const logoutController = function (req,res){
     res.cookie("jwt" , "", {
         maxAge: 0,
         httpOnly: true,
-        secure: false,
-        sameSite: 'lax'
+        secure: true,
+        sameSite: 'none'
     });
     
     res.status(200).json({
