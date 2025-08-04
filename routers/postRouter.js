@@ -7,7 +7,7 @@ const PostRouter=express.Router();
 PostRouter
          .post("/",protectRouteMiddleware,createPost)
          .get("/",getAllPosts)
-         .get("/:userId",getUserPosts)
+         .get("/user/:userId",getUserPosts)
 
 
 module.exports=PostRouter;
