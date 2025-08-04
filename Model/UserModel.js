@@ -35,6 +35,7 @@ confirmPassword: {
     type: String,
     default: "",
   },
+  
 }
 const userSchema=new mongoose.Schema(schemaRules);
 
